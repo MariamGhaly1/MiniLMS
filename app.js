@@ -18,11 +18,11 @@ app.get('/' , (req , res)=>{
  });
 
  app.get ('/web/courses/create' , (req, res ) => { 
-    res.sendFile (__dirname+"form-course.html")
+    res.sendFile (__dirname+"/form-course.html")
 });
 
 app.get ('/web/students/create' , (req, res ) => { 
-    res.sendFile (__dirname+"/student.html")
+    res.sendFile (__dirname+"/form-student.html")
 });
 
 app.get('/api/courses', (req, res) =>{
@@ -201,4 +201,4 @@ function validateStudent(student){
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000 ; 
-app.listen(3000, ()=> console.log(`Listening on port ${port}...`));
+app.listen(port, ()=> console.log(`Listening on port ${port}...`));
