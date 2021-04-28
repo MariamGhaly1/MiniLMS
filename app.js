@@ -1,6 +1,8 @@
 const Joi = require('joi');
 const express = require('express');    
-const app = express();   
+const app = express();  
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended : true }));
 
 
 const courses = [
