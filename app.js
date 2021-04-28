@@ -13,16 +13,14 @@ app.use(express.json());
 
 app.get('/' , (req , res)=>{
     res.send('<h1>Mini Mini LMS<h1>');
-    // res.send('<a href="form-student.html" class="button">Add a student</a>');
-    // res.send('<a href="./form-course.html" class="button">Add a course</a>');
  });
 
  app.get ('/web/courses/create' , (req, res ) => { 
-    ret = res.sendFile ('form-course.html', {root: __dirname});
+    res.sendFile (__dirname+"form-course.html")
 });
 
 app.get ('/web/students/create' , (req, res ) => { 
-    ret = res.sendFile ('form-student.html', {root: __dirname});
+    res.sendFile (__dirname+"/student.html")
 });
 
 app.get('/api/courses', (req, res) =>{
@@ -39,7 +37,7 @@ app.get('/api/students', (req, res) =>{
 
 
 
-app.post('/api/courses', (req, res)=> {
+app.post('/api/courses/create', (req, res)=> {
     
     const result = validateCourse(req.body);
 
@@ -59,7 +57,7 @@ app.post('/api/courses', (req, res)=> {
     res.send(course);
 });
 
-app.post('/api/students', (req, res)=> {
+app.post('/api/students/create', (req, res)=> {
     
     const result = validateStudent(req.body);
 
