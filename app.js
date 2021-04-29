@@ -2,12 +2,15 @@ const Joi = require('joi');
 const express = require('express');    
 const app = express();   
 
+app.use(express.urlencoded({extended: true}));
 
 const courses = [
     {id:1, name:"course1", code: "cse432", description:"4th year course"},
 ];
 
-const students = [];
+const students = [
+    {id:1, name:"Mariam", code: "1234567", grade:"senior"},
+];
 
 app.use(express.json()); 
 
