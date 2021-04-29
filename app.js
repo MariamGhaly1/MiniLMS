@@ -76,7 +76,7 @@ app.post('/api/students', (req, res)=> {
         code: req.body.code,
         grade: req.body.grade,
     };
-    courses.push(student);
+    students.push(student);
     res.send(student);
 });
 
